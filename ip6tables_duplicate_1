@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+#XTABLES_MULTI="/home/simran/iptables/iptables/xtables-multi"
+#IPTABLES=$XTABLES_MULTI
+#IPTABLES="$IPTABLES iptables"
+$IPTABLES -t filter -N c1
+$IPTABLES -t filter -N c1
+
+if [ $? -eq 0 ]; then
+	echo "E: Duplicate chains" >&2
+	exit 0
+fi
